@@ -3,6 +3,7 @@ package testCRM;
 import org.testng.annotations.Test;
 
 import com.testCRM.browserLaunch;
+import com.testCRM.crmPage;
 import com.testCRM.loginDetails;
 
 import org.testng.annotations.BeforeClass;
@@ -12,6 +13,7 @@ public class cogmentoCRMTest {
 
 	browserLaunch open=new browserLaunch();
 	loginDetails login=new loginDetails();
+	crmPage page=new crmPage();
 	
 	@BeforeClass
 	public void beforeClass() {
@@ -21,10 +23,17 @@ public class cogmentoCRMTest {
 	
 	}
 
-	@Test
+	@Test(priority = 1)
 	public void signInPage() {
 		
 		login.loginPage();
+		
+	}
+	
+	@Test(priority = 2)
+	public void contactsPage() {
+		
+		page.contactsScenario();
 		
 	}
 
